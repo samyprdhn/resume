@@ -3,9 +3,10 @@ import { Mail, MapPin, Phone, User } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import { Button } from "./ui/button";
 
-const HEADSHOT_WEBM = "/headshot.webm";
-const HEADSHOT_MP4 = "/headshot.mp4";
-const HEADSHOT_IMG = "/headshot.jpg";
+const base = import.meta.env.BASE_URL;
+const HEADSHOT_WEBM = `${base}headshot.webm`;
+const HEADSHOT_MP4 = `${base}headshot.mp4`;
+const HEADSHOT_IMG = `${base}headshot.jpg`;
 
 function HeadshotMedia() {
   return (
