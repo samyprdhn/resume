@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, User } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import { Button } from "./ui/button";
+import { LogStream } from "./LogStream";
 
 const base = import.meta.env.BASE_URL;
 const HEADSHOT_WEBM = `${base}headshot.webm`;
@@ -76,6 +77,8 @@ export function Hero() {
                 </a>
               </Button>
             </div>
+
+            <LogStream />
           </motion.div>
 
           <motion.div
