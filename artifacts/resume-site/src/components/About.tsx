@@ -5,7 +5,7 @@ export function About() {
     <section id="about" className="py-20 md:py-32 relative">
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-4 sticky top-24">
+          <div className="lg:col-span-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-2">Professional Summary</h2>
             <div className="w-12 h-1 bg-primary mb-6"></div>
           </div>
