@@ -9,9 +9,9 @@ const HEADSHOT_IMG = "/headshot.jpg";
 
 function HeadshotMedia() {
   return (
-    <div className="relative w-64 md:w-80 aspect-video rounded-2xl overflow-hidden border-2 border-primary/30 bg-secondary/30">
+    <div className="rounded-2xl overflow-hidden border-2 border-primary/30 bg-secondary/30 max-w-xs md:max-w-sm">
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="w-full h-auto block"
         autoPlay
         loop
         muted
