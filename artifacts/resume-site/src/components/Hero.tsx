@@ -3,6 +3,36 @@ import { Mail, MapPin, Phone, User } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import { Button } from "./ui/button";
 
+const HEADSHOT_WEBM = "/headshot.webm";
+const HEADSHOT_MP4 = "/headshot.mp4";
+const HEADSHOT_IMG = "/headshot.jpg";
+
+function HeadshotMedia() {
+  return (
+    <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-primary/30 bg-secondary/30 flex flex-col items-center justify-center gap-3 group">
+      <video
+        className="absolute inset-0 w-full h-full object-cover opacity-0 [&[data-loaded]]:opacity-100 transition-opacity duration-500"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster={HEADSHOT_IMG}
+        onCanPlay={(e) => (e.currentTarget as HTMLVideoElement).setAttribute("data-loaded", "true")}
+        onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
+      >
+        <source src={HEADSHOT_WEBM} type="video/webm" />
+        <source src={HEADSHOT_MP4} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
+      <User className="w-16 h-16 md:w-20 md:h-20 text-primary/30" strokeWidth={1} />
+      <span className="text-xs font-mono text-muted-foreground/60 text-center px-4 leading-relaxed">
+        Professional<br />headshot
+      </span>
+      <div className="absolute inset-0 border-2 border-dashed border-primary/20 rounded-2xl pointer-events-none" />
+    </div>
+  );
+}
+
 export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center py-20 overflow-hidden">
@@ -66,14 +96,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="flex-shrink-0"
           >
-            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-primary/30 bg-secondary/30 flex flex-col items-center justify-center gap-3 group">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
-              <User className="w-16 h-16 md:w-20 md:h-20 text-primary/30" strokeWidth={1} />
-              <span className="text-xs font-mono text-muted-foreground/60 text-center px-4 leading-relaxed">
-                Professional<br />headshot
-              </span>
-              <div className="absolute inset-0 border-2 border-dashed border-primary/20 rounded-2xl pointer-events-none" />
-            </div>
+            <HeadshotMedia />
           </motion.div>
         </div>
       </div>
