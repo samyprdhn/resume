@@ -38,11 +38,6 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex-1 min-w-0"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-primary/20 text-primary font-mono text-sm mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              Available for new opportunities
-            </div>
-            
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-6">
               Samir <span className="text-primary">Pradhan</span>
             </h1>
